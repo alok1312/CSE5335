@@ -1,0 +1,63 @@
+<html>
+    <head>
+      <style>
+          body{
+            background-color: rosybrown;
+        }
+             div{
+                  background-color:lavender;
+                  text-align:center;
+                  padding:5px;
+              }
+              table{
+                  border:2px solid black;
+                  width:25%;
+                  height: 25%;
+
+              }
+              h1{
+                  text-align: center;
+                  color:black;
+              }
+              p{
+                  text-align: center;
+                  color:black;
+                  font-size: larger;
+              }
+              td{
+                  border:2px solid black;
+                  text-align: center;
+                  font-size: 100px;
+                  color:black;
+              }
+              img{
+                  width:75%;
+                  height:50%;
+              }
+      </style>
+    </head>
+    <body>
+    <div>
+      <h1>CSE 5335</h1>
+      <P>Alok Kumar</P>
+      <p>Student id: 1000996623</p>
+    </div>
+    <table>
+            <tr style="font-size:20px">
+
+                <td><%= image_tag @user['picture']['data']['url'].to_s %></td>
+
+            </tr>
+            <tr style="font-size:20px">
+                <td><%= @user['name'] %></td>
+            </tr>
+            <tr>
+              <td><%= @user['gender'] %></td>
+            </tr>
+
+        </table>
+
+    </body>
+
+
+</html>

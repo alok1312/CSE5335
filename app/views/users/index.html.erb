@@ -1,0 +1,51 @@
+<html>
+<head>
+  <style>
+      body{
+          background-color: rosybrown;
+          text-align:center;
+      }
+      div{
+          background-color:lavender;
+          text-align:center;
+          padding:5px;
+      }
+      h1{
+          text-align: center;
+          color:black;
+      }
+      p{
+          text-align: center;
+          color:black;
+          font-size: larger;
+      }
+          p.div1{
+              font-size: large;
+          }
+
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $("button").click(function () {
+            $("#div1").load("show.html.erb", function (responseTxt, statusTxt, xhr) {
+                if (statusTxt == "success")
+                    alert("External content loaded successfully!");
+                if (statusTxt == "error")
+                    alert("Error: " + xhr.status + ": " + xhr.statusText);
+            });
+        });
+    });
+  </script>
+</head>
+<body>
+<div>
+<h1>CSE 5335</h1>
+<p>Alok Kumar</p>
+<p>Student id:1000996623</p>
+</div>
+ <p id="div1">After pressing the button below jquery ajax call will be initiated and will return the link to print the json object</p>
+  <button type="button">Click on the button to get the response from the server</button>
+
+</body>
+</html>
